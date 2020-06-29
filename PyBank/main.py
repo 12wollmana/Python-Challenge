@@ -7,7 +7,6 @@ import csv
 # Reads the Budget CSV saved in the Resources folder.
 # Returns a dictionary of statistics for the data
 def readBudgetCSV(): 
-    csvPath = os.path.join("Resources", "budget_data.csv")
     totalMonths = 0
     totalChange = 0
     totalAmount = 0
@@ -17,7 +16,8 @@ def readBudgetCSV():
     greatestDecProfit = 0
     isFirstRow = True
     lastAmount = 0
-
+    
+    csvPath = os.path.join("Resources", "budget_data.csv")
     with open(csvPath) as csvFile:
         csvReader = csv.reader(csvFile, delimiter=",")
 
